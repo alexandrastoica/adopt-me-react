@@ -1,0 +1,35 @@
+{
+  "name": "as-react",
+  "version": "1.0.0",
+  "description": "A project using React",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "format": "prettier \"src/**/*.{js,html}\" --write",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandrastoica/as-react.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Alexandra Stoica",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandrastoica/as-react/issues"
+  },
+  "homepage": "https://github.com/alexandrastoica/as-react#readme",
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
