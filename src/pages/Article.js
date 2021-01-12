@@ -1,13 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const Article = (props) => {
-  return (
-    <div>
-    <pre>
-      <code>{JSON.stringify(props, null, 4)}</code>
-    </pre>
-    </div>
-  );
+const Article = () => {
+  return <div></div>;
 };
 
 export default Article;

@@ -2,7 +2,6 @@ import React from "react";
 
 import Card from "./Card";
 import Header from "./Header";
-import PrimaryButton from "./PrimaryButton";
 
 export default function Main() {
   return (
@@ -14,11 +13,9 @@ export default function Main() {
         (1:1 Hons) at WorcUni, UK. Interested in all things frontend and
         human-computer interaction. 🧠👩🏻‍💻"
       />
-      <PrimaryButton link="/" title="See my work" />
-      <PrimaryButton link="/" title="See leadership and awards" />
       <h2>Work</h2>
       <ul>
-        <Card label="test" title="test" description="test" link="/" />
+        <Card label="test" title="test" description="test" link="/articles/1" />
       </ul>
     </div>
   );
