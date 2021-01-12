@@ -1,13 +1,17 @@
 import React from "react";
 import { render } from "react-dom";
 
+import Footer from "./components/Footer";
+import Main from "./components/Main";
+
+
 const App = () => {
   return (
     <div>
-      <h1>Hello</h1>
-      <h2>World</h2>
+      <Main />
+      <Footer />
     </div>
   );
 };
 
-render(React.createElement(App), document.getElementById("root"));
+render(<App />, document.getElementById("root"));
