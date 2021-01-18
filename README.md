@@ -1,3 +1,3 @@
 # A project using React
 
-TBD
+Following [Brian Holt](https://github.com/btholt)'s workshop.
