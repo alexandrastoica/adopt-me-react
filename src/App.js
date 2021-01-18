@@ -1,11 +1,12 @@
 import React from "react";
 import { render } from "react-dom";
-import { Router } from "@reach/router";
+import SearchParams from "./components/SearchParams";
 
 const App = () => {
   return (
     <React.StrictMode>
-      <Router></Router>
+      <h1>Adopt me!</h1>
+      <SearchParams />
     </React.StrictMode>
   );
 };
