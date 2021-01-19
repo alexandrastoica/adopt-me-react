@@ -1,4 +1,19 @@
 {
-  "presets": ["@babel/preset-react", "@babel/preset-env"],
-  "plugins": ["@babel/plugin-proposal-class-properties"]
+  "presets": [
+    "@babel/preset-react", 
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-class-properties"],
+    ["transform-inline-environment-variables"],
+    [
+      "babel-plugin-jsx-pragmatic",
+      {"export": "jsx", "module": "@emotion/react", "import": "___EmotionJSX"}
+    ],
+    [
+      "@babel/plugin-transform-react-jsx",
+      {"pragma": "___EmotionJSX", "pragmaFrag": "React.Fragment"}
+    ],
+    ["@emotion"]
+  ]
 }
