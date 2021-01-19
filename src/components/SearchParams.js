@@ -30,7 +30,7 @@ const SearchParams = () => {
     pet.breeds(animal).then(({ breeds }) => {
       const breedStrs = breeds.map(({ name }) => name);
       setBreeds(breedStrs);
-    }, console.error);
+    }, console.error); // TODO: better error handling
   }, [animal, setBreed, setBreeds]);
 
   return (
