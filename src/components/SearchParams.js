@@ -10,17 +10,14 @@ const SearchParams = () => {
   const [breed, BreedDropdown, setBreed] = useDropdown("Breed", "", breeds);
   const [pets, setPets] = useState([]);
 
-  function requestPets() {
-    pet
-      .animals({
-        location,
-        breed,
-        type: animal,
-      })
-      .then((petsData) => {
-        const { animals } = petsData;
-        setPets(animals || []);
-      });
+  async function requestPets() {
+    const { animals } = await pet.animals({
+      location,
+      breed,
+      type: animal,
+    });
+
+    setPets(animals || []);
   }
 
   useEffect(() => {
