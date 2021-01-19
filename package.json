@@ -1,28 +1,18 @@
 {
-  "name": "as-react",
+  "name": "adopt-me-react",
   "version": "1.0.0",
   "description": "A project using React",
   "main": "index.js",
   "scripts": {
+    "clear-build-cache": "rm -rf .cache/ dist/",
     "dev": "parcel src/index.html",
-    "dev:mock": "cross-env PET_MOCK=mock npm run dev",
-    "format": "prettier \"src/**/*.{js,html}\" --write",
+    "dev:mock": "cross-env PET_MOCK=mock parcel src/index.html",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexandrastoica/as-react.git"
-  },
-  "keywords": [
-    "react"
-  ],
   "author": "Alexandra Stoica",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alexandrastoica/as-react/issues"
-  },
-  "homepage": "https://github.com/alexandrastoica/as-react#readme",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
