@@ -2,6 +2,7 @@ import React from "react";
 import pet from "@frontendmasters/pet";
 import Carousel from "../components/Carousel";
 import ErrorBoundary from "../ErrorBoundry";
+import ThemeContext from "../ThemeContext";
 
 class Details extends React.Component {
   state = { loading: true };
@@ -22,7 +23,7 @@ class Details extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return <h1>loading...</h1>;
+      return <p>loading...</p>;
     }
 
     const { animal, breed, location, description, name, media } = this.state;
@@ -35,7 +36,13 @@ class Details extends React.Component {
           <h2>
             {animal} - {breed} - {location}
           </h2>
-          <button>Adopt {name}</button>
+
+          <ThemeContext.Consumer>
+            {([theme]) => (
+              <button style={{ backgroundColor: theme }}>Adopt {name}</button>
+            )}
+          </ThemeContext.Consumer>
+
           <p>{description}</p>
         </div>
       </div>
