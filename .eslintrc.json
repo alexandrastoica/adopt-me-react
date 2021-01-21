@@ -8,7 +8,11 @@
   ],
 
   "rules": {
-    "no-console": 1
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "member-ordering": false,
+    "no-console": 1,
+    "jsx-no-lambda": false
   },
   "plugins": [
     "@typescript-eslint"
