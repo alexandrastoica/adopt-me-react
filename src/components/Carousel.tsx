@@ -1,12 +1,23 @@
 import React from "react";
+import { Photo } from "@frontendmasters/pet";
 
-class Carousel extends React.Component {
-  state = {
+interface IProps {
+  media: Photo[];
+}
+
+interface IState {
+  active: number;
+  photos: string[];
+}
+
+class Carousel extends React.Component<IProps, IState> {
+  public state: IState = {
     photos: [],
-    active: 0,
+    active: 0
   };
-
-  static getDerivedStateFromProps({ media }) {
+  public static getDerivedStateFromProps({
+    media
+  }: IProps): { photos: string[] } {
     let photos = ["http://placecorgi.com/600/600"];
 
     if (media.length) {
@@ -15,23 +26,24 @@ class Carousel extends React.Component {
 
     return { photos };
   }
+  public handleIndexClick = (event: React.MouseEvent<HTMLElement>) => {
+    if (!(event.target instanceof HTMLElement)) {
+      return;
+    }
 
-  // Arrow function to be able to access "this"
-  handleIndexClick = (event) => {
-    this.setState({
-      active: +event.target.dataset.index,
-    });
+    if (event.target.dataset.index) {
+      this.setState({
+        active: +event.target.dataset.index
+      });
+    }
   };
-
-  render() {
+  public render() {
     const { photos, active } = this.state;
-
     return (
       <div className="carousel">
         <img src={photos[active]} alt="animal" />
         <div className="carousel-smaller">
           {photos.map((photo, index) => (
-            // TODO: a11y on carousel
             // eslint-disable-next-line
             <img
               key={photo}
@@ -39,7 +51,7 @@ class Carousel extends React.Component {
               data-index={index}
               src={photo}
               className={index === active ? "active" : ""}
-              alt="Animal thumbnail"
+              alt="animal thumbnail"
             />
           ))}
         </div>

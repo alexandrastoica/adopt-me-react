@@ -1,22 +1,24 @@
 // mostly code from reactjs.org/docs/error-boundaries.html
-import React, { Component } from "react";
-import { Link, Redirect } from "@reach/router";
+import React, { Component, ErrorInfo } from 'react';
+import { Link, Redirect } from '@reach/router';
+
 
 class ErrorBoundary extends Component {
   state = {
-    hasError: false,
-    redirect: false,
+    redirect: "",
+    hasError: false
   };
 
   static getDerivedStateFromError() {
-    return { hasError: true };
+    return { redirect: false, hasError: true };
   }
 
-  componentDidCatch(error, info) {
-    console.error("ErrorBoundary caught an error", error, info);
+  componentDidCatch(error: Error, info: ErrorInfo): void {
+    // eslint-disable-next-line
+    console.error('ErrorBoundary caught an error', error, info);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(): void {
     if (this.state.hasError) {
       setTimeout(() => this.setState({ redirect: true }), 5000);
     }
@@ -30,7 +32,8 @@ class ErrorBoundary extends Component {
     if (this.state.hasError) {
       return (
         <p>
-          There was an error with this listing. <Link to="/">Click here</Link>{" "}
+          There was an error with this listing. 
+          <Link to="/">Click here</Link>{' '}
           to back to the home page or wait five seconds
         </p>
       );
